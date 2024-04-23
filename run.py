@@ -58,15 +58,28 @@ class Run:
 
         # comm list
         xpath = ("//androidx.recyclerview.widget.RecyclerView[@resource-id='com.ss.android.ugc.aweme:id/rw3']"
-                 "//android.view.ViewGroup[@resource-id='com.ss.android.ugc.aweme:id/l9c']")
+                 "//按钮[@resource-id='com.ss.android.ugc.aweme:id/avatar']")
         el_comm_list = app_driver.find_elements_by_xpath(xpath)
         if el_comm_list:
-            print("找到评论人")
+            print(f"找到评论人数: {len(el_comm_list)}")
 
             for el_comm in el_comm_list:
                 print("找到评论人")
                 el_comm.click()
+                time.sleep(2.2)
+
+                # 点击关注
+                el_follow = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/hpo')
+                if el_follow:
+                    print("找到关注按钮")
+                    el_follow.click()
+                else:
+                    print("未找到关注按钮")
                 time.sleep(1.2)
+
+                # 返回
+                app_driver.driver.back()
+                time.sleep(2.2)
 
         else:
             print("未找到评论人")
