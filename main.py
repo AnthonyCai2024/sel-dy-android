@@ -1,8 +1,8 @@
+import time
+
 from appium import webdriver
 from appium.options.common import AppiumOptions
 from appium.webdriver.common.touch_action import TouchAction
-from appium.webdriver.common.appiumby import By
-import time
 
 
 class Run:
@@ -19,11 +19,11 @@ class Run:
         #     , 'appActivity': ".splash.SplashActivity"}
 
         option = AppiumOptions()
-        option.set_capability('deviceName','emulator-5554')
-        option.set_capability('platformName','android')
-        option.set_capability('platformVersion','9')
-        option.set_capability('appPackage','com.ss.android.ugc.aweme')
-        option.set_capability('appActivity','.splash.SplashActivity')
+        option.set_capability('deviceName', 'emulator-5554')
+        option.set_capability('platformName', 'android')
+        option.set_capability('platformVersion', '9')
+        option.set_capability('appPackage', 'com.ss.android.ugc.aweme')
+        option.set_capability('appActivity', '.splash.SplashActivity')
 
         # 当前要测试的设备名称
 
@@ -41,32 +41,38 @@ class Run:
         print("完成，再见")
 
     # 滑动页面使可以找到其它元素
-    def dianji(self):
-        time.sleep(2)
-        # 点击桌面抖音
-        self.driver.find_element(By.XPATH, '//*[@text = "抖音"]').click()
-        # 等待2秒打开时间
-        time.sleep(3)
+    def click(self):
+        time.sleep(0.8)
+        # # 点击桌面抖音
+        # dy_app = self.driver.find_element(By.XPATH, '//*[@text = "抖音"]')
+        # if dy_app:
+        #     print("找到抖音桌面图标,clicking ....")
+        #     dy_app.click()
+        # else:
+        #     print("未找到抖音桌面图标")
+        #
+        # # wait for 6 seconds
+        # time.sleep(6)
+        #
+        # action = TouchAction(self.driver)
+        # action.tap(x=200, y=550, count=1)
+        # action.perform()
 
-        action = TouchAction(self.driver)
-        action.tap(x=200, y=550, count=1)
-        action.perform()
+        # self.b = b
+        # # 点击搜索元素
+        # self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/c0="]').click()
+        # time.sleep(1)
+        # # 点击输入框，并输入文字
+        # self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/et_search_kw"]').send_keys(
+        #     b)
+        # time.sleep(1)
+        # # 输入成功后点击搜索
+        # self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/k4g"]').click()
+        # time.sleep(2)
 
-        self.b = b
-        # 点击搜索元素
-        self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/c0="]').click()
-        time.sleep(1)
-        # 点击输入框，并输入文字
-        self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/et_search_kw"]').send_keys(
-            b)
-        time.sleep(1)
-        # 输入成功后点击搜索
-        self.driver.find_element(By.XPATH, '//*[@resource-id = "com.ss.android.ugc.aweme:id/k4g"]').click()
-        time.sleep(2)
-
-        action.tap(x=200, y=550, count=1)
-        action.perform()
-        self.huadon()
+        # action.tap(x=200, y=550, count=1)
+        # action.perform()
+        # self.huadon()
 
     def huadon(self):
         self.i = i
@@ -91,7 +97,7 @@ class Run:
 
     def main(self):
         print("正在运行，请稍等....")
-        self.dianji()
+        self.click()
 
 
 if __name__ == '__main__':
