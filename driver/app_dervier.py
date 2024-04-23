@@ -28,3 +28,24 @@ class AppDriver:
         except Exception as e:
             print(e)
             return None
+
+    def find_element_by_xpath(self, ele_xpath):
+        try:
+            return self.driver.find_element(By.XPATH, ele_xpath)
+        except Exception as e:
+            print(e)
+            return None
+
+    def find_elements_by_id(self, ele_id):
+        try:
+            return self.driver.find_elements(By.ID, ele_id)
+        except Exception as e:
+            print(e)
+            return None
+
+    def find_elements_by_xpath(self, ele_xpath):
+        try:
+            return self.driver.find_elements(By.XPATH, ele_xpath)
+        except Exception as e:
+            print(e)
+            return None
