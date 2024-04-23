@@ -22,7 +22,7 @@ class Run:
         time.sleep(1.2)
 
         print("exec")
-        el_search = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/kmz')
+        el_search = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/kn3')
         if el_search:
             print("找到搜索按钮")
             el_search.click()
@@ -41,7 +41,7 @@ class Run:
 
         time.sleep(1.2)
 
-        el_search = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/zr=')
+        el_search = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/zt0')
         if el_search:
             print("找到搜索按钮")
             el_search.click()

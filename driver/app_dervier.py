@@ -6,12 +6,14 @@ from selenium.webdriver.common.by import By
 class AppDriver:
     def __init__(self, device):
         option = AppiumOptions()
-        option.set_capability('deviceName', 'emulator-5554')
+        option.set_capability('deviceName', '23013RK75C')
+        # option.set_capability('deviceName', 'emulator-5554')
         option.set_capability('platformName', 'android')
-        option.set_capability('platformVersion', '9')
-        # option.set_capability('appPackage', 'com.ss.android.ugc.aweme')
+        option.set_capability('platformVersion', '14')
+        # option.set_capability('platformVersion', '9')
+        option.set_capability('appPackage', 'com.ss.android.ugc.aweme')
         # option.set_capability('appActivity', '.splash.SplashActivity')
-        # option.set_capability('appActivity', '.splash.SplashActivity')
+        option.set_capability('appActivity', '.splash.SplashActivity')
         option.set_capability('noReset', True)
         option.set_capability('fullReset', False)
 
