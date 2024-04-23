@@ -64,7 +64,7 @@ class Run:
             print(f"找到评论人数: {len(el_comm_list)}")
 
             for el_comm in el_comm_list:
-                print("找到评论人")
+                print(f"找到评论人:{el_comm.get_attribute('content-desc')}")
                 el_comm.click()
                 time.sleep(2.2)
 
