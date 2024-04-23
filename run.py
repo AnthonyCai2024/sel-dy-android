@@ -6,8 +6,8 @@ from driver.app_dervier import AppDriver
 class Run:
 
     def exec(self, app_driver: AppDriver):
-        # open app
-        self.open_app()
+        # no need open app, because it's already opened
+        # self.open_app()
 
         time.sleep(3)
 
@@ -31,24 +31,22 @@ class Run:
 
         time.sleep(1.2)
 
-    def open_app(self):
-        time.sleep(0.8)
-        # 点击桌面抖音
-        # dy_app = self.driver.find_element(By.XPATH, '//*[@text = "抖音"]')
-        # if dy_app:
-        #     print("找到抖音桌面图标,clicking ....")
-        #     dy_app.click()
-        # else:
-        #     print("未找到抖音桌面图标")
-        #
-        # # wait for 6 seconds
-        # time.sleep(6)
-        #
-        # action = TouchAction(self.driver)
-        # action.tap(x=200, y=550, count=1)
-        # action.perform()
-        #
-        # time.sleep(1.5)
+        el_kw = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/et_search_kw')
+        if el_kw:
+            print("找到输入框")
+            time.sleep(0.8)
+            el_kw.send_keys('一千万粉丝')
+        else:
+            print("未找到输入框")
+
+        time.sleep(1.2)
+
+        el_search = app_driver.find_element_by_id('com.ss.android.ugc.aweme:id/zr=')
+        if el_search:
+            print("找到搜索按钮")
+            el_search.click()
+        else:
+            print("未找到搜索按钮")
 
 
 if __name__ == '__main__':
